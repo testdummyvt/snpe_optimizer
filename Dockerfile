@@ -86,6 +86,10 @@ RUN mkdir -p ~/.miniconda3 \
     && rm ~/.miniconda3/miniconda.sh \
     && ~/.miniconda3/bin/conda init
 
+# Accept the Anaconda Terms of Service.
+RUN /root/.miniconda3/bin/conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main && \
+    /root/.miniconda3/bin/conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r
+
 # Create the Conda environment.
 ENV PYTHON_VERSION=3.10.16
 
