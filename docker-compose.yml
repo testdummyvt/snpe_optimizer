@@ -36,6 +36,7 @@ services:
     ports:
       - "8888:8888"
       - "8889:8889"
+      - "8890:8890"
       - "5037:5037"
     dns:
       - 8.8.8.8
@@ -51,7 +52,7 @@ services:
     environment:
       - TZ=Europe/Copenhagen
       - PYTHONUNBUFFERED=1
-      - QNN_SDK_ROOT=/qairt/2.34.0.250424
+      - QNN_SDK_ROOT=/qairt/2.37.0.250724
     working_dir: /workspace/notebooks
     command: >
       zsh -c "
@@ -61,6 +62,9 @@ services:
 
         conda activate model-zoo &&
         jupyter notebook --ip=0.0.0.0 --port=8889 --allow-root --NotebookApp.token='' &
+
+        conda activate executorch &&
+        jupyter notebook --ip=0.0.0.0 --port=8890 --allow-root --NotebookApp.token='' &
 
         wait"
     logging:

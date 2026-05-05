@@ -25,10 +25,10 @@
 #
 
 # Script to download and set up the Qualcomm Neural Processing SDK for AI.
-# Version: 2.34.0.250424.
-SDK_URL="https://softwarecenter.qualcomm.com/api/download/software/sdks/Qualcomm_AI_Runtime_Community/All/2.34.0.250424/v2.34.0.250424.zip"
+# Version: 2.37.0.250724.
+SDK_URL="https://softwarecenter.qualcomm.com/api/download/software/sdks/Qualcomm_AI_Runtime_Community/All/2.37.0.250724/v2.37.0.250724.zip"
 SDK_DIR="./qairt"
-SDK_VERSION="2.34.0.250424"
+SDK_VERSION="2.37.0.250724"
 ZIP_FILE="${SDK_VERSION}.zip"
 
 # Check if the SDK version directory already exists
