@@ -16,7 +16,7 @@ apt install -y software-properties-common
 add-apt-repository ppa:ubuntu-toolchain-r/test -y
 apt update
 apt install pip cmake git flatbuffers-compiler unzip
-apt install -y libc++1 libc++abi1
+apt install -y libc++1 libc++abi1 pkg-config
 
 cd $EXECUTORCH_ROOT
 ./install_requirements.sh
@@ -39,3 +39,4 @@ cmake ../examples/qualcomm \
   -DPYTHON_EXECUTABLE=python3 \
   -Bexamples/qualcomm
 cmake --build examples/qualcomm -j$(nproc)
+
