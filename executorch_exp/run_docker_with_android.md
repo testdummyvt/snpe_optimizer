@@ -456,15 +456,29 @@ python -m examples.qualcomm.oss_scripts.llama.llama -b build-android -s 976b79f9
 
 
 
+python -m examples.qualcomm.oss_scripts.llama.llama -b build-android -s RZCY60SQV0L -m SM8750 --decoder_model qwen3-1_7b --max_seq_len 1024 --prompt "I would like to learn python, could you teach me with a simple example?" --model_mode hybrid --prefill_ar_len 128
 
 
 
 
 
+python -m examples.qualcomm.oss_scripts.llama.llama -b build-android -s RZCY60SQV0L -m SM8750  --decoder_model internvl3_1b --model_mode kv --max_seq_len 1024 --prompt "Can you describe this image?" --image_path "http://images.cocodataset.org/val2017/000000039769.jpg"
 
 
 
-
+export LD_LIBRARY_PATH=. && export ADSP_LIBRARY_PATH=. && ./qnn_multimodal_runner \
+  --decoder_model_version internvl3 \
+  --decoder_path kv_llama_qnn.pte \
+  --encoder_path vision_encoder_qnn.pte \
+  --tok_embedding_path tok_embedding_qnn.pte \
+  --tokenizer_path tokenizer.json \
+  --output_path outputs/outputs.txt \
+  --performance_output_path outputs/inference_speed.txt \
+  --shared_buffer \
+  --eval_mode 1 \
+  --seq_len 1024 \
+  --prompt "Describe this image:" \
+  --image_path vision_encoder_input_list.txt
 
 
 
