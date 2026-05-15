@@ -40,3 +40,10 @@ cmake ../examples/qualcomm \
   -Bexamples/qualcomm
 cmake --build examples/qualcomm -j$(nproc)
 
+
+
+apt install python3-pip
+apt install python3.10-venv
+apt-get install python3.10-dev python3.10-distutils python3-tk libfuse2 graphviz libgraphviz-dev
+pip install pygraphviz
+apt install wslu
